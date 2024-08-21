@@ -7,7 +7,7 @@ import Movie from '@/types/Movie';
 import tv from '@/types/tv';
 import MediaType from '@/types/MediaType';
 import MediaShort from '@/types/MediaShort';
-
+ 
 export default function Watch() {
   const nav = useNavigate(); 
 
