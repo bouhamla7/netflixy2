@@ -48,7 +48,7 @@ export default function Watch() {
     url += `/${season}/${episode}`;
 
     if (window.location.origin) url += `&o=${encodeURIComponent(window.location.origin)}`;
-    if (type === 'tv') url += `&s=${season}&e=${episode}`;
+    if (type === 'series') url += `&s=${season}&e=${episode}`;
 
     return url;
   }
