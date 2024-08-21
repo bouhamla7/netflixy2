@@ -76,7 +76,7 @@ export default function Full() {
           <p className="hero-text">{hero.description.length > 200 ? hero.description.slice(0, 160).trim() + '...' : hero.description}</p>
 
           <div className="hero-actions">
-            <Link className="button" to={`/watch/${hero.id}${hero.type === 'series' ? '?s=1&e=1' : ''}`}>
+            <Link className="button" to={`/watch/${hero.id}${hero.type === 'tv' ? '?s=1&e=1' : ''}`}>
               <i className="fa-solid fa-play"></i>
               <span>Play</span>
             </Link>
