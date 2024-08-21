@@ -43,7 +43,7 @@ export default function Watch() {
   }
 
   function getSource() {
-    let url = `https://vidsrc.pro/embed/${type}/${id}`;
+    let url = `https://vidsrc.pro/embed/tv/${id}`;
 
     url += `/${season}/${episode}`;
 
