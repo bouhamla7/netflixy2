@@ -9,7 +9,7 @@ import MediaType from '@/types/MediaType';
 import MediaShort from '@/types/MediaShort';
 
 export default function Watch() {
-  const nav = useNavigate();
+  const nav = useNavigate(); 
 
   const { id } = useParams();
 
