@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import Movie from '@/types/Movie';
+import Movie from '@/types/Movie'; 
 import Series from '@/types/tv';
 import MediaType from '@/types/MediaType';
 import MediaShort from '@/types/MediaShort';
