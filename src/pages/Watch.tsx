@@ -4,7 +4,7 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import Movie from '@/types/Movie'; 
-import Series from '@/types/tv';
+import tv from '@/types/tv';
 import MediaType from '@/types/MediaType';
 import MediaShort from '@/types/MediaShort';
 
@@ -19,7 +19,7 @@ export default function Watch() {
   const [season, setSeason] = useState(1);
   const [episode, setEpisode] = useState(1);
   const [maxEpisodes, setMaxEpisodes] = useState(1);
-  const [data, setData] = useState<Movie | Series>();
+  const [data, setData] = useState<Movie | tv>();
 
   function addViewed(data: MediaShort) {
     let viewed: MediaShort[] = [];
@@ -67,7 +67,7 @@ export default function Watch() {
       return;
     }
 
-    const data: Movie | Series = res.data;
+    const data: Movie | tv = res.data;
 
     setData(data);
 
@@ -161,7 +161,7 @@ export default function Watch() {
         <div className="player-controls">
           <i className="fa-regular fa-arrow-left" onClick={() => nav(`/${type}/${id}`)}></i>
 
-          {type === 'series' && episode < maxEpisodes && <i className="fa-regular fa-forward-step right" onClick={() => nav(`/watch/${id}?s=${season}&e=${episode + 1}&me=${maxEpisodes}`)}></i>}
+          {type === 'tv' && episode < maxEpisodes && <i className="fa-regular fa-forward-step right" onClick={() => nav(`/watch/${id}?s=${season}&e=${episode + 1}&me=${maxEpisodes}`)}></i>}
         </div>
 
         <h2 className="player-title">{getTitle()}</h2>
