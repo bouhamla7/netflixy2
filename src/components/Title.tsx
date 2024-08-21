@@ -8,7 +8,7 @@ import Wishlist from '@/utils/Wishlist';
 import EpisodeT from '@/types/Episode';
 import MediaType from '@/types/MediaType';
 import Movie from '@/types/Movie';
-import Series from '@/types/Series';
+import tv from '@/types/tv';
 import Continue from '@/types/Continue';
 
 import Card from './Card';
@@ -23,7 +23,7 @@ export default function Title({ type, id }: TitleProps) {
   const nav = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
 
-  const [data, setData] = useState<Movie | Series>();
+  const [data, setData] = useState<Movie | tv>();
   const [season, setSeason] = useState(1);
   const [episode, setEpisode] = useState(1);
   const [episodes, setEpisodes] = useState<EpisodeT[]>();
@@ -62,7 +62,7 @@ export default function Title({ type, id }: TitleProps) {
 
     setData(data);
 
-    if (type !== 'series') return;
+    if (type !== 'tv') return;
 
     const cont = localStorage.getItem('continue_' + id);
 
@@ -107,7 +107,7 @@ export default function Title({ type, id }: TitleProps) {
     e.preventDefault();
 
     if (!data) return;
-    if (type !== 'movie' && type !== 'series') return;
+    if (type !== 'movie' && type !== 'tv') return;
 
     Wishlist.add({ id: data.id, poster: data.images.poster, title: data.title, type });
   }
@@ -145,7 +145,7 @@ export default function Title({ type, id }: TitleProps) {
       return nav('/');
     }
 
-    if (type !== 'movie' && type !== 'series') {
+    if (type !== 'movie' && type !== 'tv') {
       return nav('/');
     }
 
@@ -211,9 +211,9 @@ export default function Title({ type, id }: TitleProps) {
             </div>
 
             <div className="title-actions">
-              <Link className="button" to={`/watch/${id}${type === 'series' ? `?s=${season}&e=${episode}` : ''}`}>
+              <Link className="button" to={`/watch/${id}${type === 'tv' ? `?s=${season}&e=${episode}` : ''}`}>
                 <i className="fa-solid fa-play"></i>
-                <span>{type === 'series' ? `S${season} E${episode}` : 'Play'}</span>
+                <span>{type === 'tv' ? `S${season} E${episode}` : 'Play'}</span>
               </Link>
 
               {wished ? (
