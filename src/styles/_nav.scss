@@ -50,7 +50,7 @@
   display: block;
 
   max-height: 100%;
-  max-width: 100%;
+  max-width: 184%;
 }
 
 .top-bar-links {
@@ -61,7 +61,7 @@
 
   position: relative;
 
-  margin: 0 30px;
+  margin: 0 93px;
 
   z-index: 0;
 }
@@ -69,8 +69,8 @@
 .top-bar-links a {
   color: $text-two;
 
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 700;
 
   &.active {
     color: #fff;
