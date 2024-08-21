@@ -1,5 +1,5 @@
 import Media from './Media';
 
-export default interface tv extends Media {
+export default interface series extends Media {
   seasons: number;
 }
