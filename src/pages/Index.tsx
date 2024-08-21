@@ -75,7 +75,7 @@ export default function Index() {
           <p className="hero-text">{hero.description.slice(0, 150)}</p>
 
           <div className="hero-actions">
-            <Link className="button" to={`/watch/${hero.id}${hero.type === 'series' ? '?s=1&e=1' : ''}`}>
+            <Link className="button" to={`/watch/${hero.id}${hero.type === 'tv' ? '?s=1&e=1' : ''}`}>
               <i className="fa-solid fa-play"></i>
               <span>Play</span>
             </Link>
