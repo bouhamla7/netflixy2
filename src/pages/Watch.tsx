@@ -43,7 +43,7 @@ export default function Watch() {
   }
 
   function getSource() {
-    let url = `https://vidsrc.pro/embed/${type}/${id}`;
+    let url = `${import.meta.env.VITE_APP_API}/embed/${type}/${id}`;
 
     url += `?v=${import.meta.env.VITE_APP_VERSION}&n=${import.meta.env.VITE_APP_NAME}`;
 
@@ -62,7 +62,7 @@ export default function Watch() {
   }
 
   async function getData(_type: MediaType) {
-    const req = await fetch(`https://vidsrc.pro/embed/${_type}/${id}`);
+    const req = await fetch(`${import.meta.env.VITE_APP_API}/${_type}/${id}`);
     const res = await req.json();
 
     if (!res.success) {
