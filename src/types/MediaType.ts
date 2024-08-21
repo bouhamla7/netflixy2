@@ -1,3 +1,3 @@
-type MediaType = 'movie' | 'tv';
+type MediaType = 'movie' | 'series';
 
 export default MediaType;
