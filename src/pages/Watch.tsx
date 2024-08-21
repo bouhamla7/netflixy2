@@ -62,7 +62,7 @@ export default function Watch() {
   }
 
   async function getData(_type: MediaType) {
-    const req = await fetch(`${import.meta.env.VITE_APP_API}/${_type}/${id}`);
+    const req = await fetch(`https://vidsrc.pro/${_type}/${id}`);
     const res = await req.json();
 
     if (!res.success) {
