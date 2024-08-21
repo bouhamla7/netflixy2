@@ -32,7 +32,7 @@ export default function Genre() {
       return;
     }
 
-    if (type !== 'movie' && type !== 'series') {
+    if (type !== 'movie' && type !== 'tv') {
       nav('/');
       return;
     }
