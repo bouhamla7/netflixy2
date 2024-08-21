@@ -54,7 +54,7 @@ export default function Watch() {
   function getTitle() {
     let title = data ? data.title : 'Watch';
 
-    if (type === 'series') title += ` S${season} E${episode}`;
+    if (type === 'tv') title += ` S${season} E${episode}`;
 
     return title;
   }
@@ -128,9 +128,9 @@ export default function Watch() {
       getMaxEpisodes(parseInt(s));
     }
 
-    setType('series');
+    setType('tv');
 
-    getData('series');
+    getData('tv');
 
     localStorage.setItem(
       'continue_' + id,
