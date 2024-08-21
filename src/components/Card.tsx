@@ -23,7 +23,7 @@ export default function Card({ id, poster, title, type, Ref }: CardProps) {
   const [season, setSeason] = useState(1);
 
   function getContinue() {
-    if (type !== 'series') return;
+    if (type !== 'tv') return;
 
     const cont = localStorage.getItem(`continue_${id}`);
 
@@ -109,7 +109,7 @@ export default function Card({ id, poster, title, type, Ref }: CardProps) {
     <Link
       ref={Ref || ref}
       className={`media-card ${active ? 'active' : ''}`}
-      to={`/watch/${id}${type === 'series' ? `?s=${season}&e=${episode}` : ''}`}
+      to={`/watch/${id}${type === 'tv' ? `?s=${season}&e=${episode}` : ''}`}
       onClick={onCardClick}
       onMouseOver={onCardHover}
       onMouseLeave={onCardLeave}
