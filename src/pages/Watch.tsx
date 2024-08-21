@@ -45,7 +45,7 @@ export default function Watch() {
   function getSource() {
     let url = `https://vidsrc.pro/embed/${type}/${id}`;
 
-    url += `?v=${import.meta.env.VITE_APP_VERSION}&n=${import.meta.env.VITE_APP_NAME}`;
+    url += `/${season}/${episode}`;
 
     if (window.location.origin) url += `&o=${encodeURIComponent(window.location.origin)}`;
     if (type === 'series') url += `&s=${season}&e=${episode}`;
